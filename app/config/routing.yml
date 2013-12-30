@@ -1,0 +1,4 @@
+mcm_demo:
+    resource: "@MCMDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+

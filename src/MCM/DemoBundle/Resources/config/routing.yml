@@ -1,0 +1,3 @@
+mcm_demo_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: MCMDemoBundle:Default:index }

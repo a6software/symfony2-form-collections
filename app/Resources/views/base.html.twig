@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Bootstrap 101 Template{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_less' combine=true %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet">
+        {% endstylesheets %}
+    {% endblock %}
+
+</head>
+<body>
+
+{% block body %}{% endblock %}
+  
+    {% block javascripts %}
+        {% javascripts '@jquery_js' '@bootstrap_js' filter='?yui_js' combine=true %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+</body>
+</html>
