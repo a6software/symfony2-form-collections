@@ -15,6 +15,11 @@ class EntityChoiceType extends AbstractType
             ->add('favColour', 'entity', array(
                 'class'         => 'MCMDemoBundle:Colour',
                 'property'      => 'name',
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('c')
+                              ->orderBy('c.name', 'DESC')
+                    ;
+                },
             ))
             ->add('save', 'submit')
         ;

@@ -2,7 +2,6 @@
 
 namespace MCM\DemoBundle\Controller;
 
-use MCM\DemoBundle\Entity\Colour;
 use MCM\DemoBundle\Entity\MyChoice;
 use MCM\DemoBundle\Form\Type\EntityChoiceType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
