@@ -50,4 +50,5 @@ class Colour
     {
         return $this->favColour;
     }
+    
 }
