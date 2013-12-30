@@ -5,3 +5,7 @@ mcm_demo_homepage:
 mcm_demo_array_choice_form:
     pattern:  /form/array-choice
     defaults: { _controller: MCMDemoBundle:Default:arrayChoices }
+
+mcm_demo_entity_choice_form:
+    pattern:  /form/entity-choice
+    defaults: { _controller: MCMDemoBundle:Default:entityChoices }
