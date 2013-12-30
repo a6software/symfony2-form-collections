@@ -12,10 +12,8 @@ class DefaultController extends Controller
     public function entityChoicesAction(Request $request)
     {
         $myChoice = new MyChoice();
-        $favColour = $this->getDoctrine()->getRepository('MCMDemoBundle:Colour')->find(4);
-        $myChoice->setFavColour($favColour);
 
-        $form = $this->createForm(new EntityChoiceType(), $myChoice, array(
+        $form = $this->createForm(new EntityChoiceType(3), $myChoice, array(
             'action' => $this->generateUrl('mcm_demo_entity_choice_form'),
             'method' => 'POST',
         ));
