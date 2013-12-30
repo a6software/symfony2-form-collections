@@ -12,6 +12,7 @@ class DefaultController extends Controller
     public function arrayChoicesAction(Request $request)
     {
         $myColour = new Colour();
+        $myColour->setFavColour(array(0,2,4));
 
         $form = $this->createForm(new ArrayChoiceType(), $myColour, array(
             'action' => $this->generateUrl('mcm_demo_array_choice_form'),

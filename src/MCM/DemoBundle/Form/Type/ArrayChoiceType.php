@@ -20,6 +20,8 @@ class ArrayChoiceType extends AbstractType
                     4 => 'black',
                 ),
                 'required'      => false,
+                'multiple'      => true,
+                'expanded'      => true,
                 'label_attr'    => array(
                     'class'     => "control-label",
                 ),

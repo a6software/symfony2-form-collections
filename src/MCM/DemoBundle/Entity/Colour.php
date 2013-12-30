@@ -19,7 +19,7 @@ class Colour
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="array")
      */
     protected $favColour;
 
@@ -36,7 +36,7 @@ class Colour
      * @param $favColour
      * @return $this
      */
-    public function setFavColour($favColour)
+    public function setFavColour(array $favColour)
     {
         $this->favColour = $favColour;
 
