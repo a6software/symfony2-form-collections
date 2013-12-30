@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="colour")
+ * @ORM\Table(name="my_choice")
  * @ORM\HasLifecycleCallbacks()
  */
-class Colour
+class MyChoice
 {
     /**
      * @ORM\Id
@@ -21,7 +21,7 @@ class Colour
     /**
      * @ORM\Column(type="string")
      */
-    protected $name;
+    protected $favColour;
 
 
     /**
@@ -33,12 +33,12 @@ class Colour
     }
 
     /**
-     * @param $name
+     * @param $favColour
      * @return $this
      */
-    public function setName($name)
+    public function setFavColour($favColour)
     {
-        $this->name = $name;
+        $this->favColour = $favColour;
 
         return $this;
     }
@@ -46,8 +46,9 @@ class Colour
     /**
      * @return mixed
      */
-    public function getName()
+    public function getFavColour()
     {
-        return $this->name;
+        return $this->favColour;
     }
+
 }

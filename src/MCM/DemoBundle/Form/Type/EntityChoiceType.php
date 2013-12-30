@@ -14,7 +14,7 @@ class EntityChoiceType extends AbstractType
         $builder
             ->add('favColour', 'entity', array(
                 'class'         => 'MCMDemoBundle:Colour',
-                'property'      => 'favColour',
+                'property'      => 'name',
             ))
             ->add('save', 'submit')
         ;
@@ -24,7 +24,7 @@ class EntityChoiceType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MCM\DemoBundle\Entity\Colour',
+            'data_class' => 'MCM\DemoBundle\Entity\MyChoice',
         ));
     }
 
