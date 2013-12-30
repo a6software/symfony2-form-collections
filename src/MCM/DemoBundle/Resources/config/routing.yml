@@ -1,3 +1,7 @@
 mcm_demo_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: MCMDemoBundle:Default:index }
+
+mcm_demo_array_choice_form:
+    pattern:  /form/array-choice
+    defaults: { _controller: MCMDemoBundle:Default:arrayChoices }

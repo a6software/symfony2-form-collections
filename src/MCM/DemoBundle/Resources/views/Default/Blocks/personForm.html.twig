@@ -1,0 +1,21 @@
+{{ form_start(ourForm) }}
+
+    {{ form_errors(ourForm) }}
+
+    <div class="form-group">
+        {{ form_label(ourForm.name) }}
+        {{ form_errors(ourForm.name) }}
+        {{ form_widget(ourForm.name) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(ourForm.age) }}
+        {{ form_errors(ourForm.age) }}
+        {{ form_widget(ourForm.age) }}
+    </div>
+
+    {{ form_widget(ourForm.save) }}
+
+    {{ form_row(ourForm._token) }}
+
+{{ form_end(ourForm) }}
