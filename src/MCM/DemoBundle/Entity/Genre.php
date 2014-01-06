@@ -3,13 +3,14 @@
 namespace MCM\DemoBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="football_team")
+ * @ORM\Table(name="genre")
  */
-class FootballTeam
+class Genre
 {
     /**
      * @ORM\Id
@@ -19,24 +20,19 @@ class FootballTeam
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Person", mappedBy="favFootballTeam")
+     * @ORM\OneToMany(targetEntity="Dj", mappedBy="genre")
      */
-    protected $fans;
+    protected $djs;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
     protected $name;
 
-    /**
-     * @ORM\Column(type="string", length=100, name="stadium_name")
-     */
-    protected $stadiumName;
-
 
     public function __construct()
     {
-        $this->fans = new ArrayCollection();
+        $this->djs = new ArrayCollection();
     }
 
 
@@ -67,35 +63,31 @@ class FootballTeam
     }
 
     /**
-     * @param mixed $stadiumName
+     * @param Collection $djs
+     * @return $this
      */
-    public function setStadiumName($stadiumName)
+    public function setDjs(Collection $djs)
     {
-        $this->stadiumName = $stadiumName;
+        $this->djs = $djs;
+
+        return $this;
+    }
+
+    public function addDj(Dj $dj)
+    {
+        if ( ! $this->djs->contains($dj) ) {
+            $this->djs->add($dj);
+        }
+
+        return $this->djs;
     }
 
     /**
      * @return mixed
      */
-    public function getStadiumName()
+    public function getDjs()
     {
-        return $this->stadiumName;
-    }
-
-    /**
-     * @param mixed $fans
-     */
-    public function setFans($fans)
-    {
-        $this->fans = $fans;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFans()
-    {
-        return $this->fans;
+        return $this->djs;
     }
 
 

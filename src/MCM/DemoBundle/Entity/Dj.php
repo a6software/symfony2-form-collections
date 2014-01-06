@@ -5,11 +5,11 @@ namespace MCM\DemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="MCM\DemoBundle\Repository\PersonRepository")
- * @ORM\Table(name="person")
+ * @ORM\Entity()
+ * @ORM\Table(name="dj")
  * @ORM\HasLifecycleCallbacks()
  */
-class Person
+class Dj
 {
     /**
      * @ORM\Id
@@ -24,15 +24,10 @@ class Person
     protected $name;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Genre", inversedBy="djs")
+     * @ORM\JoinColumn(name="genre_id", referencedColumnName="id")
      */
-    protected $age;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="FootballTeam", inversedBy="fans")
-     * @ORM\JoinColumn(name="football_team_id", referencedColumnName="id")
-     */
-    protected $favFootballTeam;
+    protected $genre;
 
     /**
      * created Time/Date
@@ -62,43 +57,8 @@ class Person
     }
 
     /**
-     * @param mixed $age
-     */
-    public function setAge($age)
-    {
-        $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    /**
-     * @param mixed $favFootballTeam
-     */
-    public function setFavFootballTeam(FootballTeam $favFootballTeam)
-    {
-        $this->favFootballTeam = $favFootballTeam;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFavFootballTeam()
-    {
-        return $this->favFootballTeam;
-    }
-
-    /**
-     * @param mixed $name
+     * @param $name
+     * @return $this
      */
     public function setName($name)
     {
@@ -115,6 +75,24 @@ class Person
         return $this->name;
     }
 
+    /**
+     * @param $genre
+     * @return $this
+     */
+    public function setGenre(Genre $genre)
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGenre()
+    {
+        return $this->genre;
+    }
 
     /**
      * Set createdAt
