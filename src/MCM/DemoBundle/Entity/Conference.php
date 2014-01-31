@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="genre")
+ * @ORM\Table(name="conference")
  */
-class Genre
+class Conference
 {
     /**
      * @ORM\Id
@@ -20,9 +20,9 @@ class Genre
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Dj", mappedBy="genre")
+     * @ORM\OneToMany(targetEntity="Speaker", mappedBy="conference")
      */
-    protected $djs;
+    protected $speakers;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -32,7 +32,7 @@ class Genre
 
     public function __construct()
     {
-        $this->djs = new ArrayCollection();
+        $this->speakers = new ArrayCollection();
     }
 
 
@@ -63,31 +63,31 @@ class Genre
     }
 
     /**
-     * @param Collection $djs
+     * @param Collection $speakers
      * @return $this
      */
-    public function setDjs(Collection $djs)
+    public function setSpeakers(Collection $speakers)
     {
-        $this->djs = $djs;
+        $this->speakers = $speakers;
 
         return $this;
     }
 
-    public function addDj(Dj $dj)
+    public function addSpeaker(Speaker $speaker)
     {
-        if ( ! $this->djs->contains($dj) ) {
-            $this->djs->add($dj);
+        if ( ! $this->speakers->contains($speaker) ) {
+            $this->speakers->add($speaker);
         }
 
-        return $this->djs;
+        return $this->speakers;
     }
 
     /**
      * @return mixed
      */
-    public function getDjs()
+    public function getSpeakers()
     {
-        return $this->djs;
+        return $this->speakers;
     }
 
 

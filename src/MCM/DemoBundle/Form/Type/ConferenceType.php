@@ -6,16 +6,16 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class GenreType extends AbstractType
+class ConferenceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name', 'text', array(
-                'label' => 'Genre Name',
+                'label' => 'Conference Name',
             ))
-            ->add('djs', 'collection', array(
-                'type'  => new DjType()
+            ->add('speakers', 'collection', array(
+                'type'  => new SpeakerType()
             ))
             ->add('save', 'submit', array(
                 'attr'  => array(
@@ -27,13 +27,13 @@ class GenreType extends AbstractType
 
     public function getName()
     {
-        return 'genre';
+        return 'conference';
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MCM\DemoBundle\Entity\Genre',
+            'data_class' => 'MCM\DemoBundle\Entity\Conference',
         ));
     }
 }

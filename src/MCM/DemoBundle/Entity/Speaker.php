@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="dj")
+ * @ORM\Table(name="speaker")
  * @ORM\HasLifecycleCallbacks()
  */
-class Dj
+class Speaker
 {
     /**
      * @ORM\Id
@@ -24,10 +24,10 @@ class Dj
     protected $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Genre", inversedBy="djs")
+     * @ORM\ManyToOne(targetEntity="Conference", inversedBy="speakers")
      * @ORM\JoinColumn(name="genre_id", referencedColumnName="id")
      */
-    protected $genre;
+    protected $conference;
 
     /**
      * created Time/Date
@@ -76,12 +76,12 @@ class Dj
     }
 
     /**
-     * @param $genre
+     * @param $conference
      * @return $this
      */
-    public function setGenre(Genre $genre)
+    public function setConference(Conference $conference)
     {
-        $this->genre = $genre;
+        $this->conference = $conference;
 
         return $this;
     }
@@ -89,9 +89,9 @@ class Dj
     /**
      * @return mixed
      */
-    public function getGenre()
+    public function getConference()
     {
-        return $this->genre;
+        return $this->conference;
     }
 
     /**
