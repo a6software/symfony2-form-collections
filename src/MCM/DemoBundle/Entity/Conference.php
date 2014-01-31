@@ -20,7 +20,7 @@ class Conference
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Speaker", mappedBy="conference")
+     * @ORM\OneToMany(targetEntity="Speaker", mappedBy="conference", cascade={"persist"})
      */
     protected $speakers;
 
@@ -76,6 +76,7 @@ class Conference
     public function addSpeaker(Speaker $speaker)
     {
         if ( ! $this->speakers->contains($speaker) ) {
+            $speaker->setConference($this);
             $this->speakers->add($speaker);
         }
 

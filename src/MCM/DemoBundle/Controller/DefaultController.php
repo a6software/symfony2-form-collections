@@ -14,15 +14,15 @@ class DefaultController extends Controller
     public function collectionsAction(Request $request)
     {
         $conference = new Conference();
-        $conference->setName('International Pie Conference');
-
-        $speaker1 = new Speaker();
-        $speaker1->setName('Mr M. Potato');
-        $conference->getSpeakers()->add($speaker1);
-
-        $speaker2 = new Speaker();
-        $speaker2->setName('Mr C. Onion');
-        $conference->getSpeakers()->add($speaker2);
+//        $conference->setName('International Pie Conference');
+//
+//        $speaker1 = new Speaker();
+//        $speaker1->setName('Mr M. Potato');
+//        $conference->getSpeakers()->add($speaker1);
+//
+//        $speaker2 = new Speaker();
+//        $speaker2->setName('Mr C. Onion');
+//        $conference->getSpeakers()->add($speaker2);
 
 
         $form = $this->createForm(new ConferenceType(), $conference, array(
@@ -33,7 +33,12 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            exit(\Doctrine\Common\Util\Debug::dump($conference));
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($conference);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('mcm_demo_collection_form'));
+//            exit(\Doctrine\Common\Util\Debug::dump($conference));
         }
 
         return $this->render('MCMDemoBundle:Default:conference.html.twig', array(

@@ -25,7 +25,7 @@ class Speaker
 
     /**
      * @ORM\ManyToOne(targetEntity="Conference", inversedBy="speakers")
-     * @ORM\JoinColumn(name="genre_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="conference_id", referencedColumnName="id")
      */
     protected $conference;
 
