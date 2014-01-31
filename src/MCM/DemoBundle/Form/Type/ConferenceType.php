@@ -12,13 +12,14 @@ class ConferenceType extends AbstractType
     {
         $builder
             ->add('name', 'text', array(
-                'label' => 'Conference Name',
+                'label'     => 'Conference Name',
             ))
             ->add('speakers', 'collection', array(
-                'type'  => new SpeakerType()
+                'type'      => new SpeakerType(),
+                'allow_add' => true,
             ))
             ->add('save', 'submit', array(
-                'attr'  => array(
+                'attr'      => array(
                     'class' => 'btn btn-lg btn-success'
                 )
             ))

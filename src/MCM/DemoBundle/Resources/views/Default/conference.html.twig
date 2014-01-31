@@ -1,5 +1,29 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-{{ form(form) }}
+
+    {{ form_start(form) }}
+
+        {{ form_row(form.name) }}
+
+        <h3>Speakers</h3>
+
+        <ul class="speakers" data-prototype="{{ form_widget(form.speakers.vars.prototype)|e }}">
+            {% for speaker in form.speakers %}
+                <li>{{ form_row(speaker.name) }}</li>
+            {% endfor %}
+        </ul>
+
+    {{ form_end(form) }}
+
 {% endblock %}
+
+
+    {% block javascripts %}
+        {{ parent() }}
+        {% javascripts
+            '@MCMDemoBundle/Resources/public/js/speakers.js'
+            filter='?yui_js' combine=true %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
