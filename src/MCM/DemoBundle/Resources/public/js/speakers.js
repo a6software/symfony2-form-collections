@@ -8,6 +8,11 @@ jQuery(document).ready(function() {
     // Get the ul that holds the collection of speakers
     $collectionHolder = $('ul.speakers');
 
+    // add a delete link to all of the existing speaker form li elements
+    $collectionHolder.find('li').each(function() {
+        addSpeakerFormDeleteLink($(this));
+    });
+
     // add the "add a speaker" anchor and li to the speakers ul
     $collectionHolder.append($newLinkLi);
 
@@ -43,4 +48,19 @@ function addSpeakerForm($collectionHolder, $newLinkLi) {
     // Display the form in the page in an li, before the "Add a speaker" link li
     var $newFormLi = $('<li></li>').append(newForm);
     $newLinkLi.before($newFormLi);
+}
+
+
+
+function addSpeakerFormDeleteLink($speakerFormLi) {
+    var $removeFormA = $('<a href="#">delete this speaker</a>');
+    $speakerFormLi.append($removeFormA);
+
+    $removeFormA.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // remove the li for the speaker form
+        $speakerFormLi.remove();
+    });
 }

@@ -82,6 +82,15 @@ class Conference
         return $this->speakers;
     }
 
+    public function removeSpeaker(Speaker $speaker)
+    {
+        if ($this->speakers->contains($speaker)) {
+            $this->speakers->removeElement($speaker);
+        }
+
+        return $this->speakers;
+    }
+
     /**
      * @return mixed
      */

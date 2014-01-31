@@ -15,8 +15,10 @@ class ConferenceType extends AbstractType
                 'label'     => 'Conference Name',
             ))
             ->add('speakers', 'collection', array(
-                'type'      => new SpeakerType(),
-                'allow_add' => true,
+                'type'          => new SpeakerType(),
+                'allow_add'     => true,
+                'allow_delete'  => true,
+                'by_reference'  => false,
             ))
             ->add('save', 'submit', array(
                 'attr'      => array(
