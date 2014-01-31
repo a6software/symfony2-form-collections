@@ -79,8 +79,12 @@ class Speaker
      * @param $conference
      * @return $this
      */
-    public function setConference(Conference $conference)
+    public function setConference($conference)
     {
+        if ( ! $conference instanceof Conference && $conference !== null) {
+            throw new \InvalidArgumentException('$conference must be an instance of Conference, or null');
+        }
+
         $this->conference = $conference;
 
         return $this;

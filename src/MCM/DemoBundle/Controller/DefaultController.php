@@ -2,6 +2,7 @@
 
 namespace MCM\DemoBundle\Controller;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use MCM\DemoBundle\Entity\Conference;
 use MCM\DemoBundle\Entity\Speaker;
 use MCM\DemoBundle\Form\Type\ConferenceType;
@@ -13,27 +14,34 @@ class DefaultController extends Controller
 {
     public function collectionsAction(Request $request)
     {
-        $conference = new Conference();
-//        $conference->setName('International Pie Conference');
-//
-//        $speaker1 = new Speaker();
-//        $speaker1->setName('Mr M. Potato');
-//        $conference->getSpeakers()->add($speaker1);
-//
-//        $speaker2 = new Speaker();
-//        $speaker2->setName('Mr C. Onion');
-//        $conference->getSpeakers()->add($speaker2);
+        $em = $this->getDoctrine()->getManager();
 
+        $conference = $em->getRepository('MCMDemoBundle:Conference')->find(1); /** @var $conference Conference */
 
         $form = $this->createForm(new ConferenceType(), $conference, array(
             'action' => $this->generateUrl('mcm_demo_collection_form'),
             'method' => 'POST',
         ));
 
+        $originalSpeakers = new ArrayCollection();
+
+        foreach ($conference->getSpeakers() as $speaker) {
+            $originalSpeakers->add($speaker);
+        }
+
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+
+            foreach ($originalSpeakers as $originalSpeaker) { /** @var $originalSpeaker Speaker */
+                if ($conference->getSpeakers()->contains($originalSpeaker) === false) {
+                    $conference->removeSpeaker($originalSpeaker);
+                    $originalSpeaker->setConference(null);
+                    $em->remove($originalSpeaker);
+//                    $em->persist($originalSpeaker);
+                }
+            }
+
             $em->persist($conference);
             $em->flush();
 

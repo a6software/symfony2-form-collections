@@ -20,7 +20,7 @@ class Conference
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Speaker", mappedBy="conference", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Speaker", mappedBy="conference", cascade={"persist","remove"})
      */
     protected $speakers;
 
