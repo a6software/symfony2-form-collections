@@ -3,11 +3,11 @@ Symfony 2 Form Collection Video Tutorial
 
 For the related videos see either the [A6Software YouTube channel][1], or the individual videos:
 
-1 - [Learn Symfony2 - An introduction to Form Collections][2]
-2 - [Learn Symfony2 - Adding To A Form Collection][3]
-3 - [Learn Symfony2 - Removing From A Form Collection][4]
-4 - [Learn Symfony2 - Persisting Additions to a Form Collection][5]
-5 - [Learn Symfony2 - Removing Database Records with a Form Collection][6]
+1.  [Learn Symfony2 - An introduction to Form Collections][2]
+2.  [Learn Symfony2 - Adding To A Form Collection][3]
+3.  [Learn Symfony2 - Removing From A Form Collection][4]
+4.  [Learn Symfony2 - Persisting Additions to a Form Collection][5]
+5.  [Learn Symfony2 - Removing Database Records with a Form Collection][6]
 
 Enjoy!
 
