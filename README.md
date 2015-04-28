@@ -1,7 +1,7 @@
 Symfony 2 Form Collection Video Tutorial
 ========================
 
-For the related videos see either the [A6Software YouTube channel][1], or the individual videos:
+For the related videos see either the [Code Review Videos tutorial page][1], or the individual videos:
 
 1.  [Learn Symfony2 - An introduction to Form Collections][2]
 2.  [Learn Symfony2 - Adding To A Form Collection][3]
@@ -12,8 +12,8 @@ For the related videos see either the [A6Software YouTube channel][1], or the in
 Enjoy!
 
 [1]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial
-[2]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial/video/adding-new-items-to-our-collection
-[3]:  http://www.youtube.com/watch?v=5sYHKV8lb-0
+[2]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial/video/introduction-to-the-symfony-form-collection-field-type
+[3]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial/video/adding-new-items-to-our-collection
 [4]:  http://www.youtube.com/watch?v=h2DrClR7gdU
 [5]:  http://www.youtube.com/watch?v=z8kBf7ZdOGc
 [6]:  http://www.youtube.com/watch?v=DicWrMRnTtU
