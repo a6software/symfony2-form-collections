@@ -15,5 +15,5 @@ Enjoy!
 [2]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial/video/introduction-to-the-symfony-form-collection-field-type
 [3]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial/video/adding-new-items-to-our-collection
 [4]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial/video/removing-existing-items-from-a-symfony-form-collection
-[5]:  http://www.youtube.com/watch?v=z8kBf7ZdOGc
+[5]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial
 [6]:  http://www.youtube.com/watch?v=DicWrMRnTtU
