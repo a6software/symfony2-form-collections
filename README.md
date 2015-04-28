@@ -11,8 +11,8 @@ For the related videos see either the [A6Software YouTube channel][1], or the in
 
 Enjoy!
 
-[1]:  http://www.youtube.com/channel/UCUhecYvDt6rUJIg41aXfk3g
-[2]:  http://www.youtube.com/watch?v=aFUH9wycs1Y
+[1]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial
+[2]:  https://codereviewvideos.com/course/symfony2-form-collection-tutorial/video/adding-new-items-to-our-collection
 [3]:  http://www.youtube.com/watch?v=5sYHKV8lb-0
 [4]:  http://www.youtube.com/watch?v=h2DrClR7gdU
 [5]:  http://www.youtube.com/watch?v=z8kBf7ZdOGc
